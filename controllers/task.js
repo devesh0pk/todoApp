@@ -8,7 +8,7 @@ export const newTask = async (req, res, next) => {
     await Task.create({
       title,
       description,
-      user: user.user,
+      user: req.user,
     });
 
     res.status(201).json({
